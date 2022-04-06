@@ -1,3 +1,5 @@
+const memoryGame = document.getElementById('memory-game');
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
@@ -15,22 +17,19 @@ function flipCard() {
 
     this.classList.toggle('flip');
     if (!hasFlippedCard) {
-        //first click
         hasFlippedCard = true;
         firstCard = this;
 
         return;
     }
 
-    //second click
     secondCard = this;
 
     checkForMatch();
 }
 
 function checkForMatch() {
-    const isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
+    const isMatch = firstCard.dataset.birds === secondCard.dataset.birds;
     isMatch ? disableCards() : unFlipCards();
 }
 
@@ -49,7 +48,7 @@ function unFlipCards() {
         secondCard.classList.remove('flip')
 
         resetBoard();
-    }, 1500);
+    }, 1300);
 }
 
 function resetBoard() {
