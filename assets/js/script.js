@@ -1,5 +1,12 @@
-const memoryGame = document.getElementById('memory-game');
+// Game configs
+const parrots = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot', 'revertitparrot', 'tripletsparrot', 'unicornparrot'];
 
+function gameConfig() {
+
+}
+
+
+// Game functions and variables
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
@@ -29,7 +36,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    const isMatch = firstCard.dataset.birds === secondCard.dataset.birds;
+    const isMatch = firstCard.dataset.parrots === secondCard.dataset.parrots;
     isMatch ? disableCards() : unFlipCards();
 }
 

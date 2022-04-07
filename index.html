@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Parrots Card Game</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -15,60 +16,80 @@
     <header>
         <h1>PARROT CARD GAME</h1>
     </header>
+    <div id="config" class="config">
+        <div class="inputName">
+            <label for="nome">Nome do jogador:</label>
+            <input type="text" id="nome">
+        </div>
+        <div class="selectNCartas">
+            <label for="nCartas">Número de cartas:</label>
+            <select id="nCartas">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+            </select>
+        </div>
+
+        <button onclick="gameConfig()">Começar o jogo!</button>
+    </div>
     <section id="memory-game" class="memory-game">
-        <div class="memory-card" data-birds="bobrossparrot">
+        <div class="memory-card" data-parrots="bobrossparrot">
             <img src="./assets/img/bobrossparrot.gif" alt="Bobross Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="bobrossparrot">
+        <div class="memory-card" data-parrots="bobrossparrot">
             <img src="./assets/img/bobrossparrot.gif" alt="Bobross Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="explodyparrot">
+        <div class="memory-card" data-parrots="explodyparrot">
             <img src="./assets/img/explodyparrot.gif" alt="Explody Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="explodyparrot">
+        <div class="memory-card" data-parrots="explodyparrot">
             <img src="./assets/img/explodyparrot.gif" alt="Explody Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="fiestaparrot">
+        <div class="memory-card" data-parrots="fiestaparrot">
             <img src="./assets/img/fiestaparrot.gif" alt="Fiesta Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="fiestaparrot">
+        <div class="memory-card" data-parrots="fiestaparrot">
             <img src="./assets/img/fiestaparrot.gif" alt="Fiesta Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="metalparrot">
+        <div class="memory-card" data-parrots="metalparrot">
             <img src="./assets/img/metalparrot.gif" alt="Metal Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="metalparrot">
+        <div class="memory-card" data-parrots="metalparrot">
             <img src="./assets/img/metalparrot.gif" alt="Metal Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="revertitparrot">
+        <div class="memory-card" data-parrots="revertitparrot">
             <img src="./assets/img/revertitparrot.gif" alt="Revertit Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="revertitparrot">
+        <div class="memory-card" data-parrots="revertitparrot">
             <img src="./assets/img/revertitparrot.gif" alt="Revertit Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="tripletsparrot">
+        <div class="memory-card" data-parrots="tripletsparrot">
             <img src="./assets/img/tripletsparrot.gif" alt="Triplets Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="tripletsparrot">
+        <div class="memory-card" data-parrots="tripletsparrot">
             <img src="./assets/img/tripletsparrot.gif" alt="Triplets Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="unicornparrot">
+        <div class="memory-card" data-parrots="unicornparrot">
             <img src="./assets/img/unicornparrot.gif" alt="Unicorn Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>
-        <div class="memory-card" data-birds="unicornparrot">
+        <div class="memory-card" data-parrots="unicornparrot">
             <img src="./assets/img/unicornparrot.gif" alt="Unicorn Parrot" class="front-face">
             <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">
         </div>

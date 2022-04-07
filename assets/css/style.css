@@ -29,6 +29,54 @@ h1 {
     margin-top: 40px;
     margin-bottom: 47px;
 }
+
+.config {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 200px;
+    width: 360px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    padding: 25px;
+    color: #75B79E;
+}
+
+input, select {
+    outline: none;
+    border-radius: 2px;
+    height: 25px;
+    padding-left: 4px;
+    border: 1px solid #99CEA8;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #99CEA8;
+    margin: 0 auto;
+    color: #75B79E;
+    font-size: 16px;
+    background: #fff;
+    transition: width 1s;
+    cursor: pointer;
+}
+
+button:hover {
+    width: 80%;
+    transition: width 1s;
+}
+
+#memory-game {
+    display: none;
+}
+
 .memory-game {
     display: grid;
     grid-template-columns: repeat(7, auto);
@@ -36,7 +84,6 @@ h1 {
     grid-row-gap: 34px;
     perspective: 1000px;
 }
-
 
 .memory-card {
     width: 117px;
