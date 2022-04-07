@@ -73,11 +73,11 @@ button:hover {
     transition: width 1s;
 }
 
-#memory-game {
+#parrot-game {
     display: none;
 }
 
-.memory-game {
+.parrot-game {
     display: grid;
     grid-template-columns: repeat(7, auto);
     grid-column-gap: 34px;
@@ -85,7 +85,7 @@ button:hover {
     perspective: 1000px;
 }
 
-.memory-card {
+.parrot-card {
     width: 117px;
     height: 146px;
     display: flex;
@@ -99,12 +99,12 @@ button:hover {
     transform-style: preserve-3d;
     transition: transform .5s;
 }
-.memory-card:active {
+.parrot-card:active {
     transform: scale(.97);
     transition: transform .2s;
 }
 
-.memory-card.flip {
+.parrot-card.flip {
     transform: rotateY(180deg);
 }
 
