@@ -18,6 +18,15 @@ body {
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.chronometer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #75B79E;
+    font-weight: 700;
 }
 
 h1 {

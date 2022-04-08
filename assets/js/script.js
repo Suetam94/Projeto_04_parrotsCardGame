@@ -2,10 +2,11 @@
 const parrots = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot', 'revertitparrot', 'tripletsparrot', 'unicornparrot'];
 let clickAttempts = 0;
 let nMatches = 0;
+let interval = 0;
 
 function gameConfig() {
     const gameConfig = {
-        playerName: document.getElementById('name').value ?? 'Desconhecido',
+        playerName: document.getElementById('name').value ? document.getElementById('name').value : 'Desconhecido',
         nCartas: document.getElementById('nCartas').value
     }
 
@@ -13,6 +14,54 @@ function gameConfig() {
 
     gameConstructor(gameConfig);
     game();
+
+    initChonometer();
+}
+
+function initChonometer() {
+
+    let hours = `00`,
+        minutes = `00`,
+        seconds = `00`,
+        chronometerDisplay = document.querySelector(`[data-chronometer]`),
+        chronometerCall;
+
+    function chronometer() {
+
+        seconds++;
+
+        if (seconds < 10) {
+            seconds = `0` + seconds;
+        }
+
+        if (seconds > 59) {
+            seconds = `00`;
+            minutes++;
+
+            if (minutes < 10) {
+                minutes = `0` + minutes;
+            }
+        }
+
+        if (minutes > 59) {
+            minutes = `00`;
+            hours++;
+
+            if (hours < 10) {
+                hours = `0` + hours;
+            }
+        }
+
+        chronometerDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+
+    }
+
+    chronometerCall = setInterval(chronometer, 1000);
+    event.target.setAttribute(`disabled`, ``);
+
+    interval = chronometerCall;
+
+    return chronometerCall;
 }
 
 function sessionStorageConfig(gameConfig) {
@@ -83,8 +132,21 @@ function game() {
         isMatch ? disableCards() : unFlipCards();
 
         if (nMatches == config.nCartas) {
-            setTimeout(() => alert('ganhou'), 1000);
+            setTimeout(() => winnerStats(), 500);
         }
+    }
+
+    function winnerStats() {
+        const winModal = document.getElementById('winnerModal');
+        const playerName = document.getElementById('playerName');
+        const attempts = document.getElementById('attempts');
+        const time = document.getElementById('time');
+
+        playerName.innerText = 'Jogador: ' + config.playerName;
+        attempts.innerText = 'Tentativas: ' + clickAttempts;
+        time.innerText = 'Tempo total: ' + document.querySelector(`[data-chronometer]`).textContent;
+        clearInterval(interval);
+        winModal.style.display = 'block';
     }
 
     function disableCards() {
