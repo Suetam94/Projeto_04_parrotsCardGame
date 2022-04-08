@@ -1,5 +1,7 @@
 // Game configs
 const parrots = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot', 'revertitparrot', 'tripletsparrot', 'unicornparrot'];
+let clickAttempts = 0;
+let nMatches = 0;
 
 function gameConfig() {
     const gameConfig = {
@@ -7,10 +9,10 @@ function gameConfig() {
         nCartas: document.getElementById('nCartas').value
     }
 
+    sessionStorageConfig(gameConfig);
+
     gameConstructor(gameConfig);
     game();
-
-    // sessionStorageConfig(gameConfig);
 }
 
 function sessionStorageConfig(gameConfig) {
@@ -45,13 +47,14 @@ function gameConstructor(gameConfig) {
 function game() {
     const cards = document.querySelectorAll('.parrot-card');
 
-    console.log(cards);
-
+    const config = JSON.parse(sessionStorage.getItem('config'));
     let hasFlippedCard = false;
     let lockBoard = false;
     let firstCard, secondCard;
 
     function flipCard() {
+        clickAttempts++;
+
         if (lockBoard) {
             return;
         }
@@ -75,7 +78,13 @@ function game() {
 
     function checkForMatch() {
         const isMatch = firstCard.dataset.parrots === secondCard.dataset.parrots;
+        isMatch ? nMatches++ : '';
+
         isMatch ? disableCards() : unFlipCards();
+
+        if (nMatches == config.nCartas) {
+            setTimeout(() => alert('ganhou'), 1000);
+        }
     }
 
     function disableCards() {

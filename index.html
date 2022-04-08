@@ -38,64 +38,22 @@
         <button onclick="gameConfig()">Começar o jogo!</button>
     </div>
 
-    <section id="parrot-game" class="parrot-game">
-<!--        <div class="parrot-card" data-parrots="bobrossparrot">-->
-<!--            <img src="./assets/img/bobrossparrot.gif" alt="Bobross Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="bobrossparrot">-->
-<!--            <img src="./assets/img/bobrossparrot.gif" alt="Bobross Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="explodyparrot">-->
-<!--            <img src="./assets/img/explodyparrot.gif" alt="Explody Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="explodyparrot">-->
-<!--            <img src="./assets/img/explodyparrot.gif" alt="Explody Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="fiestaparrot">-->
-<!--            <img src="./assets/img/fiestaparrot.gif" alt="Fiesta Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="fiestaparrot">-->
-<!--            <img src="./assets/img/fiestaparrot.gif" alt="Fiesta Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="metalparrot">-->
-<!--            <img src="./assets/img/metalparrot.gif" alt="Metal Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="metalparrot">-->
-<!--            <img src="./assets/img/metalparrot.gif" alt="Metal Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="revertitparrot">-->
-<!--            <img src="./assets/img/revertitparrot.gif" alt="Revertit Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="revertitparrot">-->
-<!--            <img src="./assets/img/revertitparrot.gif" alt="Revertit Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="tripletsparrot">-->
-<!--            <img src="./assets/img/tripletsparrot.gif" alt="Triplets Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="tripletsparrot">-->
-<!--            <img src="./assets/img/tripletsparrot.gif" alt="Triplets Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="unicornparrot">-->
-<!--            <img src="./assets/img/unicornparrot.gif" alt="Unicorn Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-<!--        <div class="parrot-card" data-parrots="unicornparrot">-->
-<!--            <img src="./assets/img/unicornparrot.gif" alt="Unicorn Parrot" class="front-face">-->
-<!--            <img src="./assets/img/front.png" alt="Parrot Badge" class="back-face">-->
-<!--        </div>-->
-    </section>
+    <section id="parrot-game" class="parrot-game"></section>
+
+    <div id="winnerModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="stats-container">
+                <h2>Vitória!</h2>
+                <div id="playerName">Mateus Vinícius da Silva</div>
+                <div id="attempts">Você ganhou em X jogadas!</div>
+                <div id="time">Tempo 13:13!</div>
+                <button id="reset-game">Reiniciar o jogo</button>
+            </div>
+            <img src="./assets/img/win.gif" alt="Winner">
+        </div>
+
+    </div>
 </div>
 
 <!-- JS -->
