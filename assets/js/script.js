@@ -56,6 +56,8 @@ function initChonometer() {
 
     }
 
+    document.getElementById('chronometer').style.display = 'block';
+
     chronometerCall = setInterval(chronometer, 1000);
     event.target.setAttribute(`disabled`, ``);
 
@@ -88,7 +90,31 @@ function gameConstructor(gameConfig) {
 
     parrotGame.style.display = 'grid';
     parrotGame.style.gridTemplateColumns = `repeat(${gameConfig.nCartas}, auto)`;
+
+    gameResize(parrotGame);
+    window.addEventListener('resize', () => gameResize(parrotGame));
+
     config.style.display = 'none';
+}
+
+function gameResize(parrotGame) {
+    const viewportWidth = window.screen.width;
+
+    if (viewportWidth < 1025) {
+        parrotGame.style.gridTemplateColumns = `repeat(6, auto)`;
+    }
+
+    if (viewportWidth < 992) {
+        parrotGame.style.gridTemplateColumns = `repeat(5, auto)`;
+    }
+
+    if (viewportWidth < 768) {
+        parrotGame.style.gridTemplateColumns = `repeat(4, auto)`;
+    }
+
+    if (viewportWidth < 481) {
+        parrotGame.style.gridTemplateColumns = `repeat(1, auto)`;
+    }
 }
 
 
